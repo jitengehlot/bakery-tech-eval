@@ -1,0 +1,56 @@
+<!--
+ Created by Jitendra Gehlot 28-July-2019
+ Bakery Packing problem component
+-->
+<html>
+<head>
+    <title>RUBIX: Bakery Tech Evaluation - successful test </title>
+    <script language="JavaScript" src="base.class.js"></script>
+    <script language="JavaScript" src="productData.js"></script>
+    <script language="JavaScript" src="payloads.js"></script>
+    <script language="JavaScript" src="BakeryView.class.js"></script>
+    <script language="JavaScript" src="Bakery.class.js"></script>
+
+    <style>
+        h1.error {
+            color: red;
+        }
+        #error {
+            color: red;
+        }
+
+        h1.input {
+            color: green;
+        }
+        #input {
+            color: green;
+        }
+
+        h1.output {
+            color: darkblue;
+        }
+        #output {
+            color: darkblue;
+        }
+
+    </style>
+
+    <script>
+        function pageStart() {
+			let B = new Bakery(name, product);
+			B.main(payloads.standard.stream);
+
+			let view = new BakeryView(B);
+			view.configureElements("input", "output", "error");
+            view.render();
+        }
+    </script>
+
+</head>
+    <body onload="pageStart()">
+        <h1 class="input">INPUT</h1> <pre id="input"></pre>
+        <h1 class="output">OUTPUT</h1> <div id="output"></div>
+        <h1 class="error">ERRORS</h1> <div id="error"></div>
+    </body>
+
+</html>
